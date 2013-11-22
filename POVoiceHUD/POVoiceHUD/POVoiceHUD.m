@@ -91,12 +91,14 @@
     return;
   }
   
-  recordSetting = [[NSMutableDictionary alloc] init];
+  if (!recordSetting) {
+    recordSetting = [[NSMutableDictionary alloc] init];
   
-  // You can change the settings for the voice quality
-  [recordSetting setValue :[NSNumber numberWithInt:kAudioFormatAppleIMA4] forKey:AVFormatIDKey];
-  [recordSetting setValue:[NSNumber numberWithFloat:16000.0] forKey:AVSampleRateKey];
-  [recordSetting setValue:[NSNumber numberWithInt: 1] forKey:AVNumberOfChannelsKey];
+    // You can change the settings for the voice quality
+    [recordSetting setValue :[NSNumber numberWithInt:kAudioFormatAppleIMA4] forKey:AVFormatIDKey];
+    [recordSetting setValue:[NSNumber numberWithFloat:16000.0] forKey:AVSampleRateKey];
+    [recordSetting setValue:[NSNumber numberWithInt: 1] forKey:AVNumberOfChannelsKey];
+  }
   
   // if you are using kAudioFormatLinearPCM format, activate these settings
   //[recordSetting setValue :[NSNumber numberWithInt:16] forKey:AVLinearPCMBitDepthKey];
