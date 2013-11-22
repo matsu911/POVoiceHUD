@@ -40,19 +40,19 @@
 #define WAVE_UPDATE_FREQUENCY   0.05
 
 @interface POVoiceHUD : UIView <AVAudioRecorderDelegate> {
-    UIButton *btnCancel;
-    UIImage *imgMicrophone;
-    int soundMeters[40];
-    CGRect hudRect;
+  UIButton *btnCancel;
+  UIImage *imgMicrophone;
+  int soundMeters[40];
+  CGRect hudRect;
     
-	NSMutableDictionary *recordSetting;
-	NSString *recorderFilePath;
-	AVAudioRecorder *recorder;
-	
-	SystemSoundID soundID;
-	NSTimer *timer;
+  NSMutableDictionary *recordSetting;
+  NSString *recorderFilePath;
+  AVAudioRecorder *recorder;
+  
+  SystemSoundID soundID;
+  NSTimer *timer;
     
-    float recordTime;
+  float recordTime;
 }
 
 - (id)initWithParentView:(UIView *)view;
