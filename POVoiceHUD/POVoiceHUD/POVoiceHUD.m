@@ -91,19 +91,19 @@
     return;
   }
   
-  if (!recordSetting) {
-    recordSetting = [[NSMutableDictionary alloc] init];
+  if (!self.recordSetting) {
+    self.recordSetting = [[NSMutableDictionary alloc] init];
   
     // You can change the settings for the voice quality
-    [recordSetting setValue :[NSNumber numberWithInt:kAudioFormatAppleIMA4] forKey:AVFormatIDKey];
-    [recordSetting setValue:[NSNumber numberWithFloat:16000.0] forKey:AVSampleRateKey];
-    [recordSetting setValue:[NSNumber numberWithInt: 1] forKey:AVNumberOfChannelsKey];
+    [self.recordSetting setValue :[NSNumber numberWithInt:kAudioFormatAppleIMA4] forKey:AVFormatIDKey];
+    [self.recordSetting setValue:[NSNumber numberWithFloat:16000.0] forKey:AVSampleRateKey];
+    [self.recordSetting setValue:[NSNumber numberWithInt: 1] forKey:AVNumberOfChannelsKey];
   }
   
   // if you are using kAudioFormatLinearPCM format, activate these settings
-  //[recordSetting setValue :[NSNumber numberWithInt:16] forKey:AVLinearPCMBitDepthKey];
-  //[recordSetting setValue :[NSNumber numberWithBool:NO] forKey:AVLinearPCMIsBigEndianKey];
-  //[recordSetting setValue :[NSNumber numberWithBool:NO] forKey:AVLinearPCMIsFloatKey];
+  //[self.recordSetting setValue :[NSNumber numberWithInt:16] forKey:AVLinearPCMBitDepthKey];
+  //[self.recordSetting setValue :[NSNumber numberWithBool:NO] forKey:AVLinearPCMIsBigEndianKey];
+  //[self.recordSetting setValue :[NSNumber numberWithBool:NO] forKey:AVLinearPCMIsFloatKey];
   
   NSLog(@"Recording at: %@", filePath);
   recorderFilePath = filePath;
@@ -119,7 +119,7 @@
   }
   
   err = nil;
-  recorder = [[ AVAudioRecorder alloc] initWithURL:url settings:recordSetting error:&err];
+  recorder = [[ AVAudioRecorder alloc] initWithURL:url settings:self.recordSetting error:&err];
   if (!recorder) {
     NSLog(@"recorder: %@ %d %@", [err domain], [err code], [[err userInfo] description]);
     UIAlertView *alert =

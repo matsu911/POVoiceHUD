@@ -45,7 +45,6 @@
   int soundMeters[40];
   CGRect hudRect;
     
-  NSMutableDictionary *recordSetting;
   NSString *recorderFilePath;
   AVAudioRecorder *recorder;
   
@@ -64,6 +63,7 @@
 
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, assign) id<POVoiceHUDDelegate> delegate;
+@property (nonatomic, retain) NSMutableDictionary *recordSetting;
 
 @end
 
