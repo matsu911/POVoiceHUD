@@ -168,6 +168,9 @@
 }
 
 - (void)cancelRecording {
+  if (timer) {
+    [timer invalidate];
+  }
   if ([self.delegate respondsToSelector:@selector(voiceRecordCancelledByUser:)]) {
     [self.delegate voiceRecordCancelledByUser:self];
   }
@@ -191,7 +194,6 @@
   self.alpha = 0.0;
   [self setNeedsDisplay];
     
-  [timer invalidate];
   [self cancelRecording];
 }
 
