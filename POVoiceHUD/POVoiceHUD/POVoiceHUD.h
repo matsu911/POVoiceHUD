@@ -64,6 +64,7 @@
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, assign) id<POVoiceHUDDelegate> delegate;
 @property (nonatomic, retain) NSMutableDictionary *recordSetting;
+@property (nonatomic, assign) float duration;
 
 @end
 

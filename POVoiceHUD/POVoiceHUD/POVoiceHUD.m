@@ -42,6 +42,7 @@
 
     self.opaque = NO;
     self.backgroundColor = [UIColor clearColor];
+    self.duration = 20.0;
 
     self.alpha = 0.0f;
         
@@ -148,7 +149,7 @@
     return;
   }
   
-  [recorder recordForDuration:(NSTimeInterval) 20];
+  [recorder recordForDuration:(NSTimeInterval) self.duration];
   
   timer = [NSTimer scheduledTimerWithTimeInterval:WAVE_UPDATE_FREQUENCY target:self selector:@selector(updateMeters) userInfo:nil repeats:YES];
 }
