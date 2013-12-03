@@ -50,7 +50,8 @@
     int x = (frame.size.width - HUD_SIZE) / 2;
     btnCancel = [[UIButton alloc] initWithFrame:CGRectMake(x, hudRect.origin.y + HUD_SIZE - CANCEL_BUTTON_HEIGHT, HUD_SIZE, CANCEL_BUTTON_HEIGHT)];
     [btnCancel setTitle:NSLocalizedString(@"Cancel", nil) forState:UIControlStateNormal];
-    [btnCancel addTarget:self action:@selector(cancelled:) forControlEvents:UIControlEventTouchUpInside];
+    // [btnCancel addTarget:self action:@selector(cancelled:) forControlEvents:UIControlEventTouchUpInside];
+    [btnCancel addTarget:self action:@selector(commitRecording) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:btnCancel];
         
     imgMicrophone = [UIImage imageNamed:@"microphone"];
